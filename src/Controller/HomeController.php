@@ -12,7 +12,6 @@ class HomeController extends AbstractController
 {
     private BookReadRepository $readBookRepository;
 
-    // Inject the repository via the constructor
     public function __construct(BookReadRepository $bookReadRepository)
     {
         $this->bookReadRepository = $bookReadRepository;
@@ -24,7 +23,6 @@ class HomeController extends AbstractController
         $userId     = 1;
         $booksRead  = $this->bookReadRepository->findByUserId($userId, false);
 
-        // Render the 'hello.html.twig' template
         return $this->render('pages/home.html.twig', [
             'booksRead' => $booksRead,
             'name'      => 'Accueil', // Pass data to the view

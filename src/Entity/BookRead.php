@@ -20,7 +20,7 @@ class BookRead
     #[ORM\Column(type: Types::BIGINT)]
     private ?string $book_id = null;
 
-    #[ORM\Column(type: Types::DECIMAL, precision: 5, scale: 2, nullable: true)]
+    #[ORM\Column(type: 'decimal', precision: 5, scale: 2, nullable: true)]
     private ?string $rating = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
@@ -31,6 +31,7 @@ class BookRead
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $cover = null;
+
 
     #[ORM\Column]
     private ?\DateTime $created_at = null;
